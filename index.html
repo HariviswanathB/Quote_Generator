@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InspireMe - Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="quote-box">
+    <h1>InspireMe</h1>
+    <p id="quote">Click the button to get inspired!</p>
+    <span id="author">- Unknown</span>
+    <div class="buttons">
+      <button onclick="generateQuote()">Get Quote</button>
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "You miss 100% of the shots you don’t take.", author: "Wayne Gretzky" },
+      { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+      { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" }
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const selected = quotes[randomIndex];
+      document.getElementById('quote').innerText = `"${selected.text}"`;
+      document.getElementById('author').innerText = `- ${selected.author}`;
+    }
+  </script>
+</body>
+</html>
